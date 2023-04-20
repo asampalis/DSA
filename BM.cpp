@@ -98,7 +98,11 @@ void BMSearch(std::string data, std::string pat, std::vector<std::vector<std::st
     //shift of pattern with respect to data
     int s = 0;
 
+    //while statement determines the length of data it needs to shift through
     while(s <= (N - M)){
+
+        //for statement used to verify where the word is in the data vector
+        //allows the program to output the precise location in the data that the word matched
         line = 0;
         idx = 0;
         for(int i = 0; i <= s; i++){
@@ -110,9 +114,13 @@ void BMSearch(std::string data, std::string pat, std::vector<std::vector<std::st
                 idx = 0;
             }
         }
+
         int j = M - 1;
         //std::cout << "s: " << s << std::endl;
         //std::cout << "data: " << data[s] << std::endl;
+
+        //iterates through the characters being compared starting from the back
+        //ends if either all are iterated through, or a character does not match
         while(j >= 0 && pat[j] == data[s + j]){
             j--;
             //std::cout << "j: " << j << std::endl;
