@@ -7,16 +7,20 @@
 #include <cctype>
 #include <chrono>
 
-void caseConvert(std::string pat, std::string data, std::vector<std::vector<std::string>> data_vec);
-void KMPSearch(std::string pat, std::string txt, std::vector<std::vector<std::string>> data_vec);
+void caseConvert(std::string ans_data, std::string data, std::vector<std::vector<std::string>> data_vec);
+void KMPSearch(std::string ans_data, std::string txt, std::vector<std::vector<std::string>> data_vec);
 void computeLPSArray(std::string pat, int M, int* lps);
 
 int main(int argc, char*argv[]){
 
     //file to read from
     std::string input_file(argv[1]);
-    //pattern to find
-    std::string pat(argv[2]);
+    std::string answer_file(argv[2]);
+
+    //line number to compare (0 is for every line)
+    std::string number(argv[3]);
+    int num = std::stoi(number) - 1;
+
 
     //asks user if they want to the pattern to be case sensitive
     std::string case_sense;
@@ -42,47 +46,101 @@ int main(int argc, char*argv[]){
         }
     }
 
-    //if user chooses not to care about lower/upper case
-    if (case_sense == "no"){
-        caseConvert(pat, data, data_vec);
+    //reads the file
+    std::ifstream file2(answer_file);
+    std::string line2;
+
+    //pushes the strings to data and data_vec
+    std::string ans_data;
+    std::vector<std::vector<std::string>> ans_data_vec;
+    std::string s2;
+    while (std::getline(file2, line2)){
+        std::istringstream ss2(line2);
+        ans_data_vec.push_back({});
+        while (ss2 >> s2) {
+            ans_data_vec.back().push_back(s2);
+        }
     }
-    else if (case_sense == "yes"){
-        //std::cout << pat << std::endl;
-        KMPSearch(pat, data, data_vec);
+
+    /*for(int i = 0; i < ans_data_vec.size(); i++) {
+        for (int j = 0; j < ans_data_vec[i].size(); j++) {
+            std::cout << ans_data_vec[i][j] << std::endl;
+        }
+    }*/
+
+    //if user input is 0 compares every line of files, else campare the specified line
+    if (num == -1) {
+        for (int i = 0; i < ans_data_vec.size(); i++) {
+            for (int j = 1; j < ans_data_vec[i].size(); j++) {
+                ans_data.append(ans_data_vec[i][j]);
+                ans_data.append(" ");
+            }
+
+            ans_data.erase(ans_data.end() - 1);
+
+            if(case_sense == "no") {
+                caseConvert(ans_data, data, data_vec);
+                ans_data = "";
+            }
+            else if(case_sense == "yes"){
+                KMPSearch(ans_data, data, data_vec);
+                ans_data = "";
+            }
+            else{
+                std::cout << "check spelling" << std::endl;
+            }
+        }
     }
     else{
-        std::cout << "check spelling" << std::endl;
+        for (int j = 1; j < ans_data_vec[num].size(); j++) {
+            //std::cout << ans_data_vec[num].size() << std::endl;
+            ans_data.append(ans_data_vec[num][j]);
+            ans_data.append(" ");
+        }
+
+        ans_data.erase(ans_data.end() - 1);
+
+        if (case_sense == "no"){
+            caseConvert(ans_data, data, data_vec);
+        }
+        else if(case_sense == "yes") {
+            KMPSearch(ans_data, data, data_vec);
+        }
+        else{
+            std::cout << "check spelling" << std::endl;
+        }
     }
 
     return 0;
 }
 
 //converts all character in pat and data to be lowercase, so they always match regardless of lower/upper case
-void caseConvert(std::string pat, std::string data, std::vector<std::vector<std::string>> data_vec){
-    int length = pat.length();
+void caseConvert(std::string ans_data, std::string data, std::vector<std::vector<std::string>> data_vec){
+
+    int length = ans_data.length();
     char c;
 
     //goes through pat and changes the characters to lower case if they are upper case
     for (int i = 0; i < length; i++) {
-        c = pat[i];
+        c = ans_data[i];
         if (isupper(c)) {
-            pat[i] = tolower(c);
+            ans_data[i] = tolower(c);
         }
     }
 
     //turns all characters in data to be lower case
     std::transform(data.begin(), data.end(), data.begin(), ::tolower);
 
-    KMPSearch(pat, data, data_vec);
+    KMPSearch(ans_data, data, data_vec);
 }
 
 //Prints occurrences of data in pat
-void KMPSearch(std::string pat, std::string data, std::vector<std::vector<std::string>> data_vec){
+void KMPSearch(std::string ans_data, std::string data, std::vector<std::vector<std::string>> data_vec){
     //starts the clock to time the time it takes to go through function
     auto start = std::chrono::high_resolution_clock::now();
 
 
-    int M = pat.length();
+    int M = ans_data.length();
     int N = data.length();
 
     //whether the pattern is present or not
@@ -95,7 +153,7 @@ void KMPSearch(std::string pat, std::string data, std::vector<std::vector<std::s
     int lps[M];
 
     //Preprocess the pattern
-    computeLPSArray(pat, M, lps);
+    computeLPSArray(ans_data, M, lps);
 
     //index for txt
     int i = 0;
@@ -107,7 +165,7 @@ void KMPSearch(std::string pat, std::string data, std::vector<std::vector<std::s
     int idx = 0;
 
     while ((N - i) >= (M - j)){
-        if (pat[j] == data[i]){
+        if (ans_data[j] == data[i]){
             j++;
             i++;
             //std::cout << "i: " << i << std::endl;
@@ -117,13 +175,15 @@ void KMPSearch(std::string pat, std::string data, std::vector<std::vector<std::s
         if (j == M){
             //std::cout << i << std::endl;
             //std::cout << j << std::endl;
-            std::cout << "Found pattern on line " << line << " and at index " << idx << " within " << "\"" << data_vec[line][idx] << "\"" << std::endl;
+            //std::cout << "Found pattern on line " << line << " and at index " << idx << " within " << "\"" << data_vec[line][idx] << "\"" << std::endl;
+            std::cout << "Found pattern on line " << line << " and at index " << idx << " within " << "\"" << ans_data << "\"" << std::endl;
+
             j = lps[j - 1];
             pattern = true;
         }
 
         //mismatch after j matches
-        else if (i < N && pat[j] != data[i]){
+        else if (i < N && ans_data[j] != data[i]){
 
             if (j != 0) {
                 j = lps[j - 1];
@@ -150,14 +210,15 @@ void KMPSearch(std::string pat, std::string data, std::vector<std::vector<std::s
     }
 
     if (pattern == false) {
-        std::cout << "Pattern not found in database" << std::endl;
+        std::cout << "\"" << ans_data << "\"" << " not found in database" << std::endl;
     }
 
     //stops clock and outputs time in microseconds taken to go through function
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
 
-    std::cout << "\n" << "Time taken by KMP function: " << duration.count() << " microseconds" << std::endl;
+    std::cout << "Time taken by KMP function: " << duration.count() << " microseconds" << std::endl;
+    std::cout << std::endl;
 }
 
 //Fills lps for given pattern pat
