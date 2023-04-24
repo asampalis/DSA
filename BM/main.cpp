@@ -131,7 +131,7 @@ int main() {
 	}
 	else if (choice == "b") {
 		//get input files 
-		//get input files 
+				//get input files 
 		bool a = true;
 		std::string fname1;
 		std::string fname2;
@@ -162,21 +162,32 @@ int main() {
 		int kmp_time;
 
 		//case sensetive
-		if (choice2 == "a")
-		{
-			bm_time = key.BMSearch(key.answers_given[0][0], key.answers_key[0][0], key.answers_given);
-			kmp_time = key.KMPSearch(key.answers_key[0][0], key.answers_given[0][0], -1);
+		if (choice2 == "a") {
+			
+			int kmp_time = 0;
+			int bm_time = 0;
+			for (int i = 0; i < key.answers_key.size(); i++)
+			{
+				for (int j = 0; j < key.answers_key[i].size(); j++) {
+					//kmp_time += key.KMPSearch(key.answers_key[i][j], key.answers_given[i][j], -1);
+					bm_time += key.BMSearch(key.answers_given[i][j], key.answers_key[i][j], key.answers_given);
+				}
+			}
+			std::cout << bm_time << "\n";
+			
 		}
 		//non case sensetive
-		else {
-			bm_time = key.caseConvert_bm(key.answers_key[0][0], key.answers_given[0][0], key.answers_given);
-			kmp_time = key.caseConvert_kmp(key.answers_key[0][0], key.answers_given[0][0], -1);
+		else{
+			int kmp_time = 0;
+			int bm_time = 0;
+			for (int i = 0; i < key.answers_key.size(); i++)
+			{
+				for (int j = 0; j < key.answers_key[i].size(); j++) {
+					//kmp_time += key.caseConvert_kmp(key.answers_key[i][j], key.answers_given[i][j], -1);
+					bm_time += key.caseConvert_bm(key.answers_given[i][0], key.answers_key[i][j], key.answers_given);
+				}
+			}
+			std::cout << bm_time << "\n";
 		}
-
-
-		//find the times
-		std::cout << bm_time << " ";
-
-
 	}
 }
