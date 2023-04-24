@@ -3,6 +3,10 @@
 ## Project Description:
 ## Project Structure:
 ## Compilation Instructions: 
+KMP:
+
 ## Runtime Instructions:
+KMP:
+
 ## Planning: 
 ## Sample Inputs and Outputs:
