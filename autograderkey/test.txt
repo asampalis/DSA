@@ -1,7 +1,0 @@
-s-1-A
-s-2-D
-s-3-T
-s-4-94
-s-5-T
-l-6-Flowers,Yellow,Green,Blue
-s-7-B 
