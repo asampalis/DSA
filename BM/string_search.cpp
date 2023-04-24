@@ -107,6 +107,7 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
         //allows the program to output the precise location in the data that the word matched
         line = 0;
         idx = 0;
+        /*
         for (int i = 0; i <= s; i++) {
             if (data[i] == ' ') {
                 idx++;
@@ -116,7 +117,7 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
                 idx = 0;
             }
         }
-
+        */
         int j = M - 1;
         //std::cout << "s: " << s << std::endl;
         //std::cout << "data: " << data[s] << std::endl;
@@ -128,7 +129,8 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
             //std::cout << "j: " << j << std::endl;
         }
         if (j < 0) {
-            std::cout << "Found pattern on line " << line << " and at index " << idx << " within " << "\"" << data_vec[line][idx] << "\"" << std::endl;
+            //std::cout << "Found pattern on line " << line << " and at index " << idx << " within " << "\"" << data_vec[line][idx] << "\"" << std::endl;
+            std::cout << pat << "\n";
             pattern = true;
 
             s += (s + M < N) ? M - badChar[data[s + j]] : 1;
@@ -145,7 +147,7 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
 
-    std::cout << "\n" << "Time taken by KMP function: " << duration.count() << " microseconds" << std::endl;
+    std::cout << "Time taken by BM function: " << duration.count() << " microseconds" << "\n" << "\n";
 
     return duration.count();
 }
@@ -166,7 +168,7 @@ void string_key::badCharHeuristic(std::string pat, int size, int badChar[NO_OF_C
 
 
 //converts all character in pat and data to be lowercase, so they always match regardless of lower/upper case
-
+/*
 int string_key::caseConvert_kmp(std::string ans_data, std::string data, int num) {
     //count used for the time it takes to go through the KMPSearch function
     int count;
@@ -190,6 +192,7 @@ int string_key::caseConvert_kmp(std::string ans_data, std::string data, int num)
 
     return count;
 }
+
 
 //Prints occurrences of data in pat
 int string_key::KMPSearch(std::string ans_data, std::string data, int num) {
@@ -305,7 +308,7 @@ void string_key::computeLPSArray(std::string pat, int M, std::vector<int> lps) {
         }
     }
 }
-
+*/
 void string_key::printkey() {
     for (int i = 0; i < answers_key.size(); i++) {
         for (int j = 0; j < answers_key[i].size(); j++) {
@@ -318,4 +321,5 @@ void string_key::printkey() {
         }
     }
 }
+
 
