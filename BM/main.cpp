@@ -131,9 +131,52 @@ int main() {
 	}
 	else if (choice == "b") {
 		//get input files 
+		//get input files 
+		bool a = true;
+		std::string fname1;
+		std::string fname2;
+		while (a) {
+			std::cout << "What is the name of the Answer key file" << "\n";
+			std::cout << "--->";
+			std::cin >> fname1;
+			std::cout << "What is the name of the Given Answers file" << "\n";
+			std::cout << "--->";
+			std::cin >> fname2;
 
-		//if case sensitive or not 
-		//search each individual line 
+			if (check_files(fname1) == true && check_files(fname2) == true) {
+				a = false;
+				std::cout << "Success" << "\n";
+			}
+			else {
+				std::cout << "files failed try again" << "\n";
+				std::cout << "\n" << "\n";
+			}
+		}
+
+
+		string_key key(fname1, fname2);
+		key.printkey();
+
+
+		int bm_time;
+		int kmp_time;
+
+		//case sensetive
+		if (choice2 == "a")
+		{
+			bm_time = key.BMSearch(key.answers_given[0][0], key.answers_key[0][0], key.answers_given);
+			kmp_time = key.KMPSearch(key.answers_key[0][0], key.answers_given[0][0], -1);
+		}
+		//non case sensetive
+		else {
+			bm_time = key.caseConvert_bm(key.answers_key[0][0], key.answers_given[0][0], key.answers_given);
+			kmp_time = key.caseConvert_kmp(key.answers_key[0][0], key.answers_given[0][0], -1);
+		}
+
+
+		//find the times
+		std::cout << bm_time << " ";
+
 
 	}
 }
