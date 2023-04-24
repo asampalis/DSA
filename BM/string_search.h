@@ -45,14 +45,13 @@ public:
 
 	//kmp
 	
-	int caseConvert_kmp(std::string ans_data, std::string data, int num);
+	//int caseConvert_kmp(std::string ans_data, std::string data, int num);
 
-	int KMPSearch(std::string ans_data, std::string data, int num);
+	//int KMPSearch(std::string ans_data, std::string data, int num);
 	
-	void computeLPSArray(std::string pat, int M, std::vector<int> lps);
+	//void computeLPSArray(std::string pat, int M, std::vector<int> lps);
 	
 
 	void printkey();
 
 };
-
