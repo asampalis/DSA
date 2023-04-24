@@ -1,6 +1,7 @@
 # DSA Project - String Search II
 ### Implementing the Knuth-Morris-Pratt & Boyer Moore Algorithms
 ## Project Description:
+To be able to showcase the abilities and efficiency of both the Knuth-Morris-Pratt & Boyer-Moore algorithms, we chose to create an auto grader that compares two files, one answer key and one test document and search for matches throughout the two. It also outputs 
 ## Project Structure:
 ## Compilation Instructions: 
 ### KMP: 
