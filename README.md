@@ -62,7 +62,7 @@ Simple string search key text file must only have num and a string seperated by 
 1-Hello
   
 **Text file to be searched:**
-</br>
+<br></br>
 1-Hello everyone today we are learning about the clouds.
   
   
