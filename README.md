@@ -1,9 +1,9 @@
 # DSA Project - String Search II
 ### Implementing the Knuth-Morris-Pratt & Boyer Moore Algorithms
 ## Project Description:
-To be able to showcase the abilities and efficiency of both the Knuth-Morris-Pratt & Boyer-Moore algorithms, we chose to create an auto grader that compares two files, one answer key and one test document and search for matches throughout the two. It also outputs 
+To be able to showcase the abilities and efficiency of both the Knuth-Morris-Pratt & Boyer-Moore algorithms, we chose to create an auto grader that compares two files, one answer key and one test document and search for matches throughout the two. It allows you to chose if you want to grade the entire document vs. just a single question, and it allows you to grade in a case sensative manner or not. You can grade multiple choice questions, true or false questions, math equations, and short short or long answer responses.
 ## Project Structure:
-  we took made an auto grader using string search algorithms Boyer-Moore and Knuth-Morris-Pratt and compared the run times of both the algorithms
+  we took made an auto grader using string search algorithms Boyer-Moore and Knuth-Morris-Pratt and compared the run times of both the algorithms. To really compare the two algorithms, we created an autograder tailored to each specific algorithm and then one combined autograder.
 ## Compilation Instructions: 
 ### KMP: 
 The IDE used is CLion and c++ 11. The following is an example compile:
