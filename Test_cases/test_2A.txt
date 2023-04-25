@@ -1,5 +1,0 @@
-1-50 mph
-2-division
-3-T
-4-A
-5-the equation for velocity is v=9+8t-t2. this means the velocity is 189 m/s.

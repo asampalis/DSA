@@ -1,1 +1,0 @@
-1-string,algorithm,boyer-moore,knuth-morris-pratt,rainbow
