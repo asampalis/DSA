@@ -5,10 +5,10 @@ string_key::string_key() {
 
 }
 
-//puts data into 2d vectors 
+//puts data into 2d vectors
 string_key::string_key(std::string fname1, std::string fname2) {
     //answer key
-       //reads the data file
+    //reads the data file
     std::ifstream file(fname1);
     std::string line;
 
@@ -20,12 +20,12 @@ string_key::string_key(std::string fname1, std::string fname2) {
         std::string question_num;
         std::string question_answer;
         answers_key.push_back({});
-        
+
         std::getline(ss, question_num, '-');
         while (std::getline(ss, question_answer, ',')) {
             answers_key.back().push_back(question_answer);
         }
-      
+
     }
 
     //reads the answer file
@@ -37,9 +37,9 @@ string_key::string_key(std::string fname1, std::string fname2) {
     std::string s2;
     while (std::getline(file2, line2)) {
         std::istringstream ss2(line2);
-        
 
-        
+
+
         std::string question_num2;
         std::string question_answer2;
         answers_given.push_back({});
@@ -107,7 +107,7 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
         //allows the program to output the precise location in the data that the word matched
         line = 0;
         idx = 0;
-                
+
         int j = M - 1;
         //std::cout << "s: " << s << std::endl;
         //std::cout << "data: " << data[s] << std::endl;
@@ -120,7 +120,7 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
         }
         if (j < 0) {
             //std::cout << "Found pattern on line " << line << " and at index " << idx << " within " << "\"" << data_vec[line][idx] << "\"" << std::endl;
-            std::cout << pat << " found. "; 
+            std::cout << pat << " found. ";
             std::cout << "String it was compared to:  " << data << "\n";
             pattern = true;
 
@@ -131,7 +131,7 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
         }
     }
     if (pattern == false) {
-        std::cout << pat << " not found in database. "; 
+        std::cout << pat << " not found in database. ";
         std::cout << "String it was compared to:  " << data << "\n";
     }
 
@@ -160,7 +160,7 @@ void string_key::badCharHeuristic(std::string pat, int size, int badChar[NO_OF_C
 
 
 //converts all character in pat and data to be lowercase, so they always match regardless of lower/upper case
-/*
+
 int string_key::caseConvert_kmp(std::string ans_data, std::string data, int num) {
     //count used for the time it takes to go through the KMPSearch function
     int count;
@@ -178,7 +178,7 @@ int string_key::caseConvert_kmp(std::string ans_data, std::string data, int num)
 
     //turns all characters in data to be lower case
     std::transform(data.begin(), data.end(), data.begin(), ::tolower);
-    
+
     //returned value of the time
     count = KMPSearch(ans_data, data, num);
 
@@ -274,33 +274,33 @@ int string_key::KMPSearch(std::string ans_data, std::string data, int num) {
     return duration.count();
 }
 
-void string_key::computeLPSArray(std::string pat, int M, std::vector<int> lps) {
+void string_key::computeLPSArray(std::string pat, int M, int* lps){
     //length of the previous longest prefix suffix
     int len = 0;
 
-    lps.push_back(0);
+    lps[0] = 0;
 
     //the loop calculates lps for i = 1 to M-1
     int i = 1;
-    while (i < M) {
-        if (pat[i] == pat[len]) {
+    while (i < M){
+        if (pat[i] == pat[len]){
             len++;
-            lps.push_back(i);
+            lps[i] = len;
             i++;
         }
-        else {
-            if (len != 0) {
+        else{
+            if (len != 0){
                 len = lps[len - 1];
 
             }
-            else {
-                lps.push_back(0);
+            else{
+                lps[i] = 0;
                 i++;
             }
         }
     }
 }
-*/
+
 void string_key::printkey() {
     for (int i = 0; i < answers_key.size(); i++) {
         for (int j = 0; j < answers_key[i].size(); j++) {
@@ -313,6 +313,5 @@ void string_key::printkey() {
         }
     }
 }
-
 
 
