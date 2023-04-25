@@ -107,17 +107,7 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
         //allows the program to output the precise location in the data that the word matched
         line = 0;
         idx = 0;
-        /*
-        for (int i = 0; i <= s; i++) {
-            if (data[i] == ' ') {
-                idx++;
-            }
-            if (idx >= data_vec[line].size()) {
-                line++;
-                idx = 0;
-            }
-        }
-        */
+                
         int j = M - 1;
         //std::cout << "s: " << s << std::endl;
         //std::cout << "data: " << data[s] << std::endl;
@@ -130,7 +120,8 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
         }
         if (j < 0) {
             //std::cout << "Found pattern on line " << line << " and at index " << idx << " within " << "\"" << data_vec[line][idx] << "\"" << std::endl;
-            std::cout << pat << "\n";
+            std::cout << pat << " found. "; 
+            std::cout << "String it was compared to:  " << data << "\n";
             pattern = true;
 
             s += (s + M < N) ? M - badChar[data[s + j]] : 1;
@@ -140,7 +131,8 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
         }
     }
     if (pattern == false) {
-        std::cout << "Pattern not found in database" << std::endl;
+        std::cout << pat << " not found in database. "; 
+        std::cout << "String it was compared to:  " << data << "\n";
     }
 
     //stops clock and outputs time in microseconds taken to go through function
@@ -321,5 +313,6 @@ void string_key::printkey() {
         }
     }
 }
+
 
 
