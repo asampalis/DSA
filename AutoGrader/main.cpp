@@ -116,7 +116,7 @@ int main() {
             bm_time = key.BMSearch(key.answers_given[0][0], key.answers_key[0][0], key.answers_given);
             kmp_time = key.KMPSearch(key.answers_key[0][0], key.answers_given[0][0], -1);
         }
-            //non case sensetive
+        //non case sensetive
         else {
             bm_time = key.caseConvert_bm(key.answers_key[0][0], key.answers_given[0][0], key.answers_given);
             kmp_time = key.caseConvert_kmp(key.answers_key[0][0], key.answers_given[0][0], -1);
@@ -124,7 +124,8 @@ int main() {
 
 
         //find the times
-        std::cout << bm_time << " " ;
+        std::cout <<"bm total time: " << bm_time << "  ms" << "\n";
+        std::cout << "kmp total time: " << kmp_time << "  ms" << "\n";
 
 
 
@@ -169,25 +170,28 @@ int main() {
             for (int i = 0; i < key.answers_key.size(); i++)
             {
                 for (int j = 0; j < key.answers_key[i].size(); j++) {
-                    kmp_time += key.KMPSearch(key.answers_key[i][j], key.answers_given[i][0], -1);
+                    kmp_time += key.KMPSearch(key.answers_key[i][0], key.answers_given[i][j], -1);
                     bm_time += key.BMSearch(key.answers_given[i][0], key.answers_key[i][j], key.answers_given);
                 }
             }
-            std::cout << bm_time << "\n";
+            std::cout << "bm total time: " << bm_time << "  ms" << "\n";
+            std::cout << "kmp total time: " << kmp_time << "  ms" << "\n";
 
         }
-            //non case sensetive
-        else{
+        //non case sensetive
+        else {
             int kmp_time = 0;
             int bm_time = 0;
             for (int i = 0; i < key.answers_key.size(); i++)
             {
+
                 for (int j = 0; j < key.answers_key[i].size(); j++) {
                     kmp_time += key.caseConvert_kmp(key.answers_key[i][j], key.answers_given[i][0], -1);
                     bm_time += key.caseConvert_bm(key.answers_given[i][0], key.answers_key[i][j], key.answers_given);
                 }
             }
-            std::cout << bm_time << "\n";
+            std::cout << "bm total time: " << bm_time << "  ms" << "\n";
+            std::cout << "kmp total time: " << kmp_time << "  ms" << "\n";
         }
     }
 }
