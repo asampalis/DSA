@@ -76,13 +76,13 @@ AutoGrader key text file must only have num and a string seperated by a singular
 **Input key:** 
 <br></br>
 1-T
-<br></br>
+<br>
 2-T
-<br></br>
+<br>>
 3-9.40
-<br></br>
+<br>
 4-Hello,
-<br></br>
+<br>
   
 **Text file to be searched:**
 <br></br>
