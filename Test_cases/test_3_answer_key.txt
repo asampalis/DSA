@@ -1,1 +1,1 @@
-1 'string' 'algorithm' 'boyer-moore' 'knuth-morris-pratt' 'rainbow'
+1-string,algorithm,boyer-moore,knuth-morris-pratt,rainbow
