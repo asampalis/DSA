@@ -109,19 +109,17 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
         idx = 0;
 
         int j = M - 1;
-        //std::cout << "s: " << s << std::endl;
-        //std::cout << "data: " << data[s] << std::endl;
+    
 
         //iterates through the characters being compared starting from the back
         //ends if either all are iterated through, or a character does not match
         while (j >= 0 && pat[j] == data[s + j]) {
             j--;
-            //std::cout << "j: " << j << std::endl;
+            
         }
         if (j < 0) {
-            //std::cout << "Found pattern on line " << line << " and at index " << idx << " within " << "\"" << data_vec[line][idx] << "\"" << std::endl;
-            std::cout << pat << " found. ";
-            std::cout << "String it was compared to:  " << data << "\n";
+            std::cout << pat << " found. " << "\n";
+            
             pattern = true;
 
             s += (s + M < N) ? M - badChar[data[s + j]] : 1;
@@ -131,8 +129,8 @@ int string_key::BMSearch(std::string data, std::string pat, std::vector<std::vec
         }
     }
     if (pattern == false) {
-        std::cout << pat << " not found in database. ";
-        std::cout << "String it was compared to:  " << data << "\n";
+        std::cout << pat << " not found. " << '\n';
+        
     }
 
     //stops clock and outputs time in microseconds taken to go through function
@@ -274,7 +272,7 @@ int string_key::KMPSearch(std::string ans_data, std::string data, int num) {
     return duration.count();
 }
 
-void string_key::computeLPSArray(std::string pat, int M, int* lps){
+void string_key::computeLPSArray(std::string pat, int M, int* lps) {
     //length of the previous longest prefix suffix
     int len = 0;
 
@@ -282,18 +280,18 @@ void string_key::computeLPSArray(std::string pat, int M, int* lps){
 
     //the loop calculates lps for i = 1 to M-1
     int i = 1;
-    while (i < M){
-        if (pat[i] == pat[len]){
+    while (i < M) {
+        if (pat[i] == pat[len]) {
             len++;
             lps[i] = len;
             i++;
         }
-        else{
-            if (len != 0){
+        else {
+            if (len != 0) {
                 len = lps[len - 1];
 
             }
-            else{
+            else {
                 lps[i] = 0;
                 i++;
             }
@@ -313,5 +311,6 @@ void string_key::printkey() {
         }
     }
 }
+
 
 
