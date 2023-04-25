@@ -44,9 +44,13 @@ Once the program is run, it will prompt the user to choose whether they want the
 ### COMBINED AUTO-GRADER:
 No CLAs.
 Options are presented when running. 
+<br>
 First set of options:
+<br>
 -simple string search 
+<br>
 or 
+<br>
 -auto grader
 
 **Input file specifications**
