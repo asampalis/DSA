@@ -116,8 +116,12 @@ or
 -auto grader
 <br></br>
 You will also have the choice between the string being Case sensetive or not.
+ 
 
+## Planning: 
+## Sample Inputs and Outputs:
 
+### COMBINED AUTO-GRADER
 **Input Files Specifications**
 <br></br>
 Simple string search key text file must only have num and a string seperated by a singular "-". Only one line.
@@ -154,9 +158,3 @@ AutoGrader key text file must only have num and a string seperated by a singular
 <br>
 4-Hello everyone today we are learning about the clouds.
 <br>  
-
-
-  
-
-## Planning: 
-## Sample Inputs and Outputs:
