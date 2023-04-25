@@ -6,7 +6,7 @@ To be able to showcase the abilities and efficiency of both the Knuth-Morris-Pra
   we took made an auto grader using string search algorithms Boyer-Moore and Knuth-Morris-Pratt and compared the run times of both the algorithms
 ## Compilation Instructions: 
 ### KMP: 
-The IDE used is CLion and the following is an example compile:
+The IDE used is CLion and c++ 11. The following is an example compile:
 
 &emsp;&emsp;&emsp;&emsp; g++ KMP.cpp -o KMP
 
@@ -40,6 +40,25 @@ The IDE used is CLion and c++ 11. The following is an example compile:
 </br></br>
 
 Once the program is run, it will prompt the user to choose whether they want the pattern to be case-sensitive
+</br>
+
+**Answer key file format:**
+</br>
+1 a
+</br>
+2 test
+</br>
+3 'code' 'language' 'useful'
+</br>
+
+**Text file to be searched:**
+</br>
+1 A
+</br>
+2 test
+</br>
+3 This code is a language that is very useful to use.
+</br>
 
 ### BOYER-MOORE:
 
