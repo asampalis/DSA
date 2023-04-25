@@ -13,6 +13,9 @@ The IDE used is CLion and the following is an example compile:
 ### BOYER-MOORE:
 
 ### COMBINED AUTO-GRADER:
+The IDE used is CLion and following is an example compile:
+
+&emsp;&emsp;&emsp;&emsp; g++ main.cpp string_search.cpp -o KMP
 
 ## Runtime Instructions:
 ### KMP:
@@ -39,6 +42,23 @@ Once the program is run, it will prompt the user to choose whether they want the
 ### BOYER-MOORE:
 
 ### COMBINED AUTO-GRADER:
+No CLAs.
+Options are presented when running. 
+First set of options:
+-simple string search 
+or 
+-auto grader
+
+### Input file specifications
+Simple string search key text file must only have num and a string seperated by a singular "-".
+Example: 
+  Input key: 
+  1-Hello
+  
+  Text file to be searched:
+  1-Hello everyone today we are learning about the clouds.
+  
+  
 
 ## Planning: 
 ## Sample Inputs and Outputs:
