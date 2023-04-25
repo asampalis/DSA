@@ -158,3 +158,5 @@ AutoGrader key text file must only have num and a string seperated by a singular
 <br>
 4-Hello everyone today we are learning about the clouds.
 <br>  
+<br></br>
+look in output folder for screenshots of output
