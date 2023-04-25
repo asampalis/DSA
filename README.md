@@ -55,7 +55,7 @@ or
 
 **Input file specifications**
 <br></br>
-Simple string search key text file must only have num and a string seperated by a singular "-".
+Simple string search key text file must only have num and a string seperated by a singular "-". Only one line.
 <br></br>
 **Input key:** 
 <br></br>
@@ -64,7 +64,25 @@ Simple string search key text file must only have num and a string seperated by 
 **Text file to be searched:**
 <br></br>
 1-Hello everyone today we are learning about the clouds.
+<br></br>
+
+AutoGrader key text file must only have num and a string seperated by a singular "-". There can be multiple comma sperated string values in a line. Can be multiple lines.
+<br></br>
+**Input key:** 
+<br></br>
+1-T
+<br></br>
+2-T
+<br></br>
+3-9.40
+<br></br>
+4-Hello,
+<br></br>
   
+**Text file to be searched:**
+<br></br>
+1-Hello everyone today we are learning about the clouds.
+    
   
 
 ## Planning: 
