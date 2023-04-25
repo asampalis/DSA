@@ -9,6 +9,10 @@ The IDE used is CLion and the following is an example compile:
 
 &emsp;&emsp;&emsp;&emsp; g++ KMP.cpp -o KMP
 
+###BOYER-MOORE:
+
+###COMBINED AUTO-GRADER:
+
 ## Runtime Instructions:
 ### KMP:
 **CLA Format:** &emsp; grading_file &emsp; answer_key_file &emsp; where_to_search
@@ -30,6 +34,9 @@ The IDE used is CLion and the following is an example compile:
 </br></br>
 
 Once the program is run, it will prompt the user to choose whether they want the pattern to be case-sensitive
+###BOYER-MOORE:
+
+###COMBINED AUTO-GRADER:
 
 ## Planning: 
 ## Sample Inputs and Outputs:
