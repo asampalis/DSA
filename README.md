@@ -13,7 +13,7 @@ The IDE used is CLion and the following is an example compile:
 ### BOYER-MOORE:
 
 ### COMBINED AUTO-GRADER:
-The IDE used is CLion and following is an example compile:
+The IDE used is CLion and c++ 11. The following is an example compile:
 
 &emsp;&emsp;&emsp;&emsp; g++ main.cpp string_search.cpp -o KMP
 <br></br>
