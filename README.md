@@ -81,7 +81,7 @@ AutoGrader key text file must only have num and a string seperated by a singular
 <br>
 3-9.40
 <br>
-4-Hello,
+4-Hello,today,clouds
 <br>
   
 **Text file to be searched:**
