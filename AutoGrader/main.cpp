@@ -169,7 +169,7 @@ int main() {
             for (int i = 0; i < key.answers_key.size(); i++)
             {
                 for (int j = 0; j < key.answers_key[i].size(); j++) {
-                    kmp_time += key.KMPSearch(key.answers_key[i][0], key.answers_given[i][j], -1);
+                    kmp_time += key.KMPSearch(key.answers_key[i][j], key.answers_given[i][0], -1);
                     bm_time += key.BMSearch(key.answers_given[i][0], key.answers_key[i][j], key.answers_given);
                 }
             }
