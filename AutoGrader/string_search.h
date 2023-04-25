@@ -13,7 +13,7 @@
 #define NO_OF_CHARS 256
 
 
-class string_key{
+class string_key {
 public:
     //a vector of pairs that store the answers:
     //1- the number assigned to the question
@@ -55,5 +55,6 @@ public:
     void printkey();
 
 };
+
 
 
