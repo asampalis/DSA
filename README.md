@@ -53,7 +53,7 @@ or
 <br></br>
 -auto grader
 
-**Input file specifications**
+**Input Files Specifications**
 <br></br>
 Simple string search key text file must only have num and a string seperated by a singular "-". Only one line.
 <br></br>
