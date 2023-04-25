@@ -104,7 +104,7 @@ int main() {
 
 		
 		string_key key(fname1, fname2);
-		key.printkey();
+		
 
 		
 		int bm_time;
@@ -155,7 +155,7 @@ int main() {
 
 
 		string_key key(fname1, fname2);
-		key.printkey();
+		
 
 
 		int bm_time;
@@ -169,8 +169,8 @@ int main() {
 			for (int i = 0; i < key.answers_key.size(); i++)
 			{
 				for (int j = 0; j < key.answers_key[i].size(); j++) {
-					//kmp_time += key.KMPSearch(key.answers_key[i][j], key.answers_given[i][j], -1);
-					bm_time += key.BMSearch(key.answers_given[i][j], key.answers_key[i][j], key.answers_given);
+					//kmp_time += key.KMPSearch(key.answers_key[i][0], key.answers_given[i][j], -1);
+					bm_time += key.BMSearch(key.answers_given[i][0], key.answers_key[i][j], key.answers_given);
 				}
 			}
 			std::cout << bm_time << "\n";
@@ -183,7 +183,7 @@ int main() {
 			for (int i = 0; i < key.answers_key.size(); i++)
 			{
 				for (int j = 0; j < key.answers_key[i].size(); j++) {
-					//kmp_time += key.caseConvert_kmp(key.answers_key[i][j], key.answers_given[i][j], -1);
+					//kmp_time += key.caseConvert_kmp(key.answers_key[i][0], key.answers_given[i][j], -1);
 					bm_time += key.caseConvert_bm(key.answers_given[i][0], key.answers_key[i][j], key.answers_given);
 				}
 			}
