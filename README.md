@@ -57,14 +57,12 @@ or
 <br></br>
 Simple string search key text file must only have num and a string seperated by a singular "-".
 <br></br>
-Example: 
-  <br></br>
-  **Input key:** 
-  <br></br>
-  1-Hello
+**Input key:** 
+<br></br>
+1-Hello
   
-  **Text file to be searched:**
-  1-Hello everyone today we are learning about the clouds.
+**Text file to be searched:**
+1-Hello everyone today we are learning about the clouds.
   
   
 
