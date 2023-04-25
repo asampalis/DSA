@@ -78,7 +78,7 @@ AutoGrader key text file must only have num and a string seperated by a singular
 1-T
 <br>
 2-T
-<br>>
+<br>
 3-9.40
 <br>
 4-Hello,
@@ -87,13 +87,13 @@ AutoGrader key text file must only have num and a string seperated by a singular
 **Text file to be searched:**
 <br></br>
 1-T
-<br></br>
+<br>
 2-T
-<br></br>
+<br>
 3-9.30
-<br></br>
+<br>
 4-Hello everyone today we are learning about the clouds.
-<br></br>    
+<br>  
 
 
   
