@@ -16,6 +16,8 @@ The IDE used is CLion and the following is an example compile:
 The IDE used is CLion and following is an example compile:
 
 &emsp;&emsp;&emsp;&emsp; g++ main.cpp string_search.cpp -o KMP
+<br></br>
+
 
 ## Runtime Instructions:
 ### KMP:
@@ -52,7 +54,8 @@ First set of options:
 or 
 <br></br>
 -auto grader
-
+<br></br>
+You will also have the choice between the string being Case sensetive or not.
 
 
 **Input Files Specifications**
