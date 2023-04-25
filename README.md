@@ -81,8 +81,14 @@ AutoGrader key text file must only have num and a string seperated by a singular
   
 **Text file to be searched:**
 <br></br>
-1-Hello everyone today we are learning about the clouds.
-    
+1-T
+<br></br>
+2-T
+<br></br>
+3-9.30
+<br></br>
+4-Hello everyone today we are learning about the clouds.
+<br></br>    
   
 
 ## Planning: 
