@@ -53,6 +53,8 @@ or
 <br></br>
 -auto grader
 
+
+
 **Input Files Specifications**
 <br></br>
 Simple string search key text file must only have num and a string seperated by a singular "-". Only one line.
@@ -89,6 +91,8 @@ AutoGrader key text file must only have num and a string seperated by a singular
 <br></br>
 4-Hello everyone today we are learning about the clouds.
 <br></br>    
+
+
   
 
 ## Planning: 
