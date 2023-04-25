@@ -3,6 +3,7 @@
 ## Project Description:
 To be able to showcase the abilities and efficiency of both the Knuth-Morris-Pratt & Boyer-Moore algorithms, we chose to create an auto grader that compares two files, one answer key and one test document and search for matches throughout the two. It also outputs 
 ## Project Structure:
+  we took made an auto grader using string search algorithms Boyer-Moore and Knuth-Morris-Pratt and compared the run times of both the algorithms
 ## Compilation Instructions: 
 ### KMP: 
 The IDE used is CLion and the following is an example compile:
