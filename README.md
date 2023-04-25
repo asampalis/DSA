@@ -49,7 +49,7 @@ First set of options:
 or 
 -auto grader
 
-## Input file specifications
+# Input file specifications
 Simple string search key text file must only have num and a string seperated by a singular "-".
 Example: 
   Input key: 
