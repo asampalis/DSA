@@ -11,7 +11,7 @@ The IDE used is CLion and c++ 11. The following is an example compile:
 &emsp;&emsp;&emsp;&emsp; g++ KMP.cpp -o KMP
 
 ### BOYER-MOORE:
-The IDE used is CLion and the following is an example compile:
+The IDE used is CLion and c++ 11. The following is an example compile:
 
 &emsp;&emsp;&emsp;&emsp; g++ BM.cpp -o BM
 
@@ -83,6 +83,25 @@ Once the program is run, it will prompt the user to choose whether they want the
 </br></br>
 
 Once the program is run, it will prompt the user to choose whether they want the pattern to be case-sensitive
+</br>
+
+**Answer key file format:**
+</br>
+1 a
+</br>
+2 test
+</br>
+3 'code' 'language' 'useful'
+</br>
+
+**Text file to be searched:**
+</br>
+1 A
+</br>
+2 test
+</br>
+3 This code is a language that is very useful to use.
+</br>
 
 ### COMBINED AUTO-GRADER:
 No CLAs.
