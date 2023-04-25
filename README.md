@@ -44,20 +44,23 @@ Once the program is run, it will prompt the user to choose whether they want the
 ### COMBINED AUTO-GRADER:
 No CLAs.
 Options are presented when running. 
-<br>
+<br></br>
 First set of options:
-<br>
+<br></br>
 -simple string search 
-<br>
+<br></br>
 or 
-<br>
+<br></br>
 -auto grader
 
 **Input file specifications**
-<br>
+<br></br>
 Simple string search key text file must only have num and a string seperated by a singular "-".
+<br></br>
 Example: 
+  <br></br>
   **Input key:** 
+  <br></br>
   1-Hello
   
   **Text file to be searched:**
