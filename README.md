@@ -118,7 +118,6 @@ or
 You will also have the choice between the string being Case sensetive or not.
  
 
-## Planning: 
 ## Sample Inputs and Outputs:
 
 ### COMBINED AUTO-GRADER
